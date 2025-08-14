@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case — Nome da campanha | Fernando Malta</title>
+  <meta name="description" content="Detalhes do case." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Case — Nome da campanha" />
+  <meta property="og:description" content="Objetivos, solução criativa e resultados." />
+  <meta property="og:image" content="../assets/images/case-01.jpg" />
+  <meta property="og:type" content="article" />
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .breadcrumbs{font-size:14px; color:var(--muted); margin:18px 0}
+    .case-hero{aspect-ratio:16/9; background:#0e1116; border-radius:16px; overflow:hidden}
+    .case-body{display:grid; grid-template-columns:1.2fr .8fr; gap:24px; margin-top:18px}
+    .gallery{display:grid; grid-template-columns:repeat(12,1fr); gap:12px; margin-top:18px}
+    .gallery img{grid-column:span 6; border-radius:12px}
+    @media (max-width: 980px){ .case-body{grid-template-columns:1fr} .gallery img{grid-column:span 12}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="../index.html" aria-label="Ir para a home">
+        <span class="logo" aria-hidden="true"></span>
+        <h1>FERNANDO MALTA</h1>
+      </a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="../index.html#trabalhos">Trabalhos</a></li>
+          <li><a href="../index.html#sobre">Sobre</a></li>
+          <li><a href="../index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../index.html#trabalhos">Trabalhos</a> / Case</div>
+
+    <div class="case-hero">
+      <img src="../assets/images/case-01.jpg" alt="Imagem hero do case">
+    </div>
+
+    <section class="case-body">
+      <div>
+        <h2>Nome da campanha</h2>
+        <p>Contexto do problema, desafio de comunicação e público. Insight criativo, racional do KV e elementos-chave. Papel dos canais e ativações.</p>
+        <p><strong>Resultados</strong>: impactos, métricas, prêmios e aprendizados.</p>
+      </div>
+      <aside>
+        <div class="about .box">
+          <div class="box">
+            <h4>Ficha técnica</h4>
+            <p><strong>Cliente:</strong> Marca X<br>
+               <strong>Agência:</strong> Arizona<br>
+               <strong>Função:</strong> Direção de Arte<br>
+               <strong>Ano:</strong> 2025</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="gallery">
+      <img src="../assets/images/case-02.jpg" alt="Imagem 2 do case">
+      <img src="../assets/images/case-03.jpg" alt="Imagem 3 do case">
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Fernando Malta.</p>
+      <div class="social">
+        <a href="../index.html#trabalhos">Trabalhos</a>
+        <a href="../index.html#sobre">Sobre</a>
+        <a href="../index.html#contato">Contato</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
