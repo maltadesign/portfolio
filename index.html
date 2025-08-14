@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fernando Malta – Direção de Arte</title>
+  <meta name="description" content="Portfólio de direção de arte de Fernando Malta." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0c0f; --card:#12141a; --muted:#a7adba; --text:#e9edf5; --accent:#7dd3fc;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:var(--bg); color:var(--text);
+    }
+    a{color:inherit; text-decoration:none}
+    img{display:block; max-width:100%; height:auto}
+    .container{max-width:1180px; margin:0 auto; padding:0 20px}
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(6px); background:rgba(11,12,15,.6); border-bottom:1px solid rgba(255,255,255,.05)}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:68px}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,#38bdf8,#818cf8); box-shadow:0 10px 30px rgba(56,189,248,.35)}
+    .brand h1{font-size:16px; letter-spacing:.04em; font-weight:700}
+    nav ul{display:flex; gap:18px; list-style:none; padding:0; margin:0}
+    nav a{font-size:14px; color:var(--muted)}
+    nav a:hover, nav a:focus{color:#fff}
+
+    .hero{padding:64px 0 28px}
+    .hero h2{font-size:42px; line-height:1.08; margin:0 0 10px; letter-spacing:-.02em}
+    .hero p{color:var(--muted); max-width:760px; margin:0}
+
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+    .tag{font-size:12px; padding:6px 10px; border:1px solid rgba(255,255,255,.08); border-radius:999px; color:var(--muted)}
+
+    .section{padding:24px 0 64px}
+    .section h3{font-size:18px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 16px}
+
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px}
+    .card{grid-column:span 4; background:var(--card); border:1px solid rgba(255,255,255,.05); border-radius:18px; overflow:hidden; transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+    .card:hover{transform:translateY(-4px); border-color:rgba(125,211,252,.5); box-shadow:0 14px 40px rgba(0,0,0,.35)}
+    .thumb{aspect-ratio:16/10; background:#0e1116; display:flex; align-items:center; justify-content:center}
+    .thumb img{width:100%; height:100%; object-fit:cover}
+    .card-body{padding:14px 14px 16px}
+    .card-title{font-weight:600; font-size:16px; margin:0 0 6px}
+    .card-meta{display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px}
+
+    /* Feature row */
+    .feature{display:grid; grid-template-columns:1.2fr .8fr; gap:24px; background:linear-gradient(180deg, rgba(125,211,252,.1), rgba(125,211,252,0)); border:1px solid rgba(125,211,252,.25); border-radius:20px; overflow:hidden}
+    .feature .image{background:#0e1116}
+    .feature .image img{width:100%; height:100%; object-fit:cover}
+    .feature .copy{padding:20px}
+    .feature h4{margin:0 0 6px; font-size:22px}
+    .feature p{color:var(--muted)}
+
+    .about{display:grid; grid-template-columns:1fr 1fr; gap:24px}
+    .about .box{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:18px}
+    .about h4{margin:0 0 6px}
+    .about p{color:var(--muted)}
+
+    footer{padding:40px 0 56px; color:var(--muted); border-top:1px dashed rgba(255,255,255,.08)}
+    .footer-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    .social{display:flex; gap:12px}
+    .social a{padding:8px 12px; border:1px solid rgba(255,255,255,.08); border-radius:12px}
+
+    /* Modal */
+    .lightbox{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.7); backdrop-filter:blur(2px)}
+    .lightbox[aria-hidden="false"]{display:flex}
+    .lightbox-content{max-width:min(1200px,92vw); max-height:86vh}
+    .lightbox img{width:100%; height:auto; border-radius:14px}
+    .close{position:absolute; top:18px; right:18px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); color:#fff; border-radius:999px; padding:8px 12px; cursor:pointer}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .card{grid-column:span 6}
+      .feature{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .hero h2{font-size:34px}
+    }
+    @media (max-width: 640px){
+      .card{grid-column:span 12}
+      .nav{height:64px}
+      .hero{padding:44px 0 14px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Ir para o topo">
+        <span class="logo" aria-hidden="true"></span>
+        <h1>FERNANDO MALTA</h1>
+      </a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="#trabalhos">Trabalhos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <h2 id="hero-title">Direção de arte para marcas que querem memorabilidade.</h2>
+      <p>Campanhas, key visuals, branding e ativações. Seleção de projetos para Droga Raia, entre outras marcas. (Substitua este texto pelo seu resumo.)</p>
+      <div class="tags">
+        <span class="tag">Key Visual</span>
+        <span class="tag">Branding</span>
+        <span class="tag">Campanhas 360</span>
+        <span class="tag">Eventos & PDV</span>
+      </div>
+    </section>
+
+    <!-- Destaque opcional -->
+    <section class="section" aria-labelledby="feature-title">
+      <h3 id="feature-title">Destaque</h3>
+      <article class="feature" role="article">
+        <div class="image">
+          <img src="assets/feature-hero.jpg" alt="Imagem destaque do projeto" loading="lazy">
+        </div>
+        <div class="copy">
+          <h4>Projeto em foco — Nome da campanha</h4>
+          <p>Breve descrição do case, objetivos, insight criativo e resultados. Clique para abrir em tela cheia.</p>
+          <p class="card-meta"><small>Categoria: Campanha</small> <small>Ano: 2025</small></p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Grid de trabalhos -->
+    <section id="trabalhos" class="section" aria-labelledby="work-title">
+      <h3 id="work-title">Trabalhos</h3>
+      <div class="grid">
+        <!-- Card 1 -->
+        <article class="card" data-lightbox="assets/case-01.jpg" role="article" aria-label="Abrir projeto 1 em tela cheia">
+          <div class="thumb"><img src="assets/thumb-01.jpg" alt="Projeto 1 – thumb"></div>
+          <div class="card-body">
+            <h4 class="card-title">Projeto 1 — Nome do job</h4>
+            <div class="card-meta"><span>Key Visual</span><span>2025</span></div>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="card" data-lightbox="assets/case-02.jpg" role="article" aria-label="Abrir projeto 2 em tela cheia">
+          <div class="thumb"><img src="assets/thumb-02.jpg" alt="Projeto 2 – thumb"></div>
+          <div class="card-body">
+            <h4 class="card-title">Projeto 2 — Nome do job</h4>
+            <div class="card-meta"><span>Branding</span><span>2024</span></div>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="card" data-lightbox="assets/case-03.jpg" role="article" aria-label="Abrir projeto 3 em tela cheia">
+          <div class="thumb"><img src="assets/thumb-03.jpg" alt="Projeto 3 – thumb"></div>
+          <div class="card-body">
+            <h4 class="card-title">Projeto 3 — Nome do job</h4>
+            <div class="card-meta"><span>Campanha</span><span>2024</span></div>
+          </div>
+        </article>
+        <!-- Card 4 -->
+        <article class="card" data-lightbox="assets/case-04.jpg" role="article" aria-label="Abrir projeto 4 em tela cheia">
+          <div class="thumb"><img src="assets/thumb-04.jpg" alt="Projeto 4 – thumb"></div>
+          <div class="card-body">
+            <h4 class="card-title">Projeto 4 — Nome do job</h4>
+            <div class="card-meta"><span>Evento</span><span>2023</span></div>
+          </div>
+        </article>
+        <!-- Card 5 -->
+        <article class="card" data-lightbox="assets/case-05.jpg" role="article" aria-label="Abrir projeto 5 em tela cheia">
+          <div class="thumb"><img src="assets/thumb-05.jpg" alt="Projeto 5 – thumb"></div>
+          <div class="card-body">
+            <h4 class="card-title">Projeto 5 — Nome do job</h4>
+            <div class="card-meta"><span>Identidade</span><span>2023</span></div>
+          </div>
+        </article>
+        <!-- Card 6 -->
+        <article class="card" data-lightbox="assets/case-06.jpg" role="article" aria-label="Abrir projeto 6 em tela cheia">
+          <div class="thumb"><img src="assets/thumb-06.jpg" alt="Projeto 6 – thumb"></div>
+          <div class="card-body">
+            <h4 class="card-title">Projeto 6 — Nome do job</h4>
+            <div class="card-meta"><span>PDV</span><span>2022</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section" aria-labelledby="about-title">
+      <h3 id="about-title">Sobre</h3>
+      <div class="about">
+        <div class="box">
+          <h4>Bio curta</h4>
+          <p>Diretor de Arte com experiência em campanhas 360, branding e ativações. Atualmente Head de Arte na Arizona, atuando com marcas como Droga Raia. (Edite este texto.)</p>
+        </div>
+        <div class="box">
+          <h4>Prêmios & destaques</h4>
+          <p>Liste aqui prêmios, shortlists e reconhecimentos relevantes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section" aria-labelledby="contact-title">
+      <h3 id="contact-title">Contato</h3>
+      <div class="about">
+        <div class="box">
+          <h4>Fale comigo</h4>
+          <p>Email: <a href="mailto:maltadesign@gmail.com">maltadesign@gmail.com</a><br>
+             LinkedIn: <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">/in/fernandomalta</a> (substituir)
+          </p>
+        </div>
+        <div class="box">
+          <h4>Disponibilidade</h4>
+          <p>Avalio propostas para consultoria, direção de arte e design de campanhas.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Fernando Malta. Todos os direitos reservados.</p>
+      <div class="social">
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox simples -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" aria-label="Lightbox de imagem">
+    <button class="close" aria-label="Fechar" onclick="closeLightbox()">✕</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Imagem do projeto em foco" />
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const cards = document.querySelectorAll('.card');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const src = card.getAttribute('data-lightbox');
+        if(src){
+          lightboxImg.src = src;
+          lightbox.setAttribute('aria-hidden','false');
+          document.body.style.overflow = 'hidden';
+        }
+      })
+    })
+
+    function closeLightbox(){
+      lightbox.setAttribute('aria-hidden','true');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    lightbox.addEventListener('click', (e) => {
+      if(e.target === lightbox){ closeLightbox(); }
+    })
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape'){ closeLightbox(); }
+    })
+  </script>
+</body>
+</html>
