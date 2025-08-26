@@ -1,5 +1,5 @@
 :root{
-  --bg:#0b0c0f; --card:#12141a; --muted:#a7adba; --text:#e9edf5; --accent:#7dd3fc;
+  --bg:#0c36b2; --card:#12141a; --muted:#a7adba; --text:#e9edf5; --accent:#7dd3fc;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
