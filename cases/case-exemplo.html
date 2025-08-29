@@ -22,6 +22,7 @@
     .gallery img{grid-column:span 6; border-radius:12px}
     @media (max-width: 980px){ .case-body{grid-template-columns:1fr} .gallery img{grid-column:span 12}}
   </style>
+  <meta name="theme-color" content="#0c36b2" />
 </head>
 <body>
   <header>
@@ -44,17 +45,17 @@
     <div class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../index.html#trabalhos">Trabalhos</a> / Case</div>
 
     <div class="case-hero">
-      <img src="../assets/images/case-01.jpg" alt="Imagem hero do case">
+      <img src="../assets/images/case-01.jpg" alt="Imagem hero do case" loading="lazy" decoding="async">
     </div>
 
     <section class="case-body">
       <div>
         <h2>Nome da campanha</h2>
-        <p>Proposta de KV para a celebrar a inauguração da farmácia Droga Raia de número 200 no Rio de Janeiro..</p>
+        <p>Proposta de KV para celebrar a inauguração da farmácia Droga Raia de número 200 no Rio de Janeiro.</p>
         <p><strong>Resultados</strong>: impactos, métricas, prêmios e aprendizados.</p>
       </div>
       <aside>
-        <div class="about .box">
+        <div class="about">
           <div class="box">
             <h4>Ficha técnica</h4>
             <p><strong>Cliente:</strong> Marca X<br>
@@ -66,15 +67,15 @@
       </aside>
     </section>
 
-    <section class="gallery">
-      <img src="../assets/images/case-02.jpg" alt="Imagem 2 do case">
-      <img src="../assets/images/case-03.jpg" alt="Imagem 3 do case">
+    <section class="gallery" aria-label="Galeria do case">
+      <img src="../assets/images/case-02.jpg" alt="Imagem 2 do case" loading="lazy" decoding="async">
+      <img src="../assets/images/case-03.jpg" alt="Imagem 3 do case" loading="lazy" decoding="async">
     </section>
   </main>
 
   <footer>
     <div class="container footer-grid">
-      <p>© <span id="year"></span> Fernando Malta.</p>
+      <p>&copy; <span id="year"></span> Fernando Malta.</p>
       <div class="social">
         <a href="../index.html#trabalhos">Trabalhos</a>
         <a href="../index.html#sobre">Sobre</a>
@@ -85,3 +86,4 @@
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
+
